@@ -12,7 +12,7 @@
 중간에 rpc를 입력하는 곳이 있어요
 ![image](https://github.com/user-attachments/assets/16d424e1-f6d9-4217-8956-0cf640e0b1b6)
 (다른 사진 빌려왔어요 미안~)
-이렇게 뜰 건데, sepolia ETH는 뭐냐? 두 가지 방법이 있네요~
+이렇게 뜰 건데, sepolia ETH RPC는 뭐냐? 두 가지 방법이 있네요~
 
 1) 공용 rpc를 이용한다
 ```bash
