@@ -111,11 +111,38 @@ cd ~/unichain-node && docker-compose up -d
 echo -e "${CYAN}잘 설정됐는지 확인하기${NC}"
 curl -d '{"id":1,"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest",false]}' -H "Content-Type: application/json" http://localhost:8545
 
-echo -e "${RED}다 됐으니까 꺼~!져 씨;발${NC}"
+echo -e "${RED}도커가 시작이 안 됐으면 3번을 실행해 주세요~${NC}"
+}
+
+restart_unichain() {
+echo -e "${CYAN}docker compose down${NC}"
+cd ~/unichain-node && docker compose down
+
+echo -e "${CYAN}docker-compose up -d${NC}"
+cd ~/unichain-node && docker-compose up -d
+
+echo -e "${CYAN}도커 목록 보여주기!~(2개 뜨면 됨)${NC}"
+docker ps
+
+echo -e "${RED}도커가 만약 안 켜졌다면 3번을 다시 실행해 주세요~${NC}"
 }
 
 uninstall_unichain() {
-echo -e "${BOLD}${RED}내가 왜 해줘야 되는데? 씨발 꺼져${NC}"
+echo -e "${BOLD}${CYAN}도커 종료 중..${NC}"
+docker stop unichain-node-op-node-1
+docker stop unichain-node-execution-client-1
+
+docker rm -f unichain-node-op-node-1
+docker rm -f unichain-node-execution-client-1
+
+echo -e "${CYAN}도커 이미지 삭제 중${NC}"
+docker rmi us-docker.pkg.dev/oplabs-tools-artifacts/images/op-node:v1.9.1
+docker rmi us-docker.pkg.dev/oplabs-tools-artifacts/images/op-geth:v1.101408.0
+
+echo -e "${CYAN}디렉토리 삭제 중...${NC}"
+sudo rm -rf ~/unichain-node
+
+echo -e "${RED}유니체인 노드가 깔끔하게 지워졌어요~${NC}"
 }
 # 메인 메뉴
 echo && echo -e "${BOLD}${RED}Unichain Node 설치 명령어 ${NC} by 비욘세제발죽어
@@ -123,7 +150,8 @@ ${CYAN}원하는 거 고르시고 실행하시고 그러세효. ${NC}
  ———————————————————————
  ${GREEN} 1. 유니체인 노드 설치하기 ${NC}
  ${GREEN} 2. 유니체인 노드 rpc/api 바꾸기 ${NC}
- ${GREEN} 3. 유니체인 노드 삭제하기(기본 명령어 제외) ${NC}
+ ${GREEN} 3. 유니체인 노드 재시작하기 ${NC}
+ ${GREEN} 4. 유니체인 노드 삭제하기(기본 명령어 제외) ${NC}
  ———————————————————————" && echo
 
 # 사용자 입력 대기
@@ -138,6 +166,9 @@ case "$num" in
     change_rpc_of_unichain
     ;;
 3)
+	restart_unichain
+	;;
+4)
     uninstall_unichain
     ;;
 
