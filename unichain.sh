@@ -86,7 +86,15 @@ cd ~/unichain-node && docker-compose up -d
 echo -e "${CYAN}잘 설정됐는지 확인하기${NC}"
 curl -d '{"id":1,"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest",false]}' -H "Content-Type: application/json" http://localhost:8545
 
-echo -e "${RED}다 됐으니까 꺼~!져 씨;발${NC}"
+echo -e "${RED}노드 설치가 완료됐습니다~ 바로 2번 작업을 해주세요 ㅎㅎ${NC}"
+}
+
+node_key() {
+node_priv_key=$(cat ~/unichain-node/geth-data/geth/nodekey)
+echo -e "${BOLD}${MAGENTA}당신의 유니체인 프라이빗 키 :${NC} ${node_priv_key}"
+
+echo -e "${YELLOW}이제 님의 프라이빗키를 메타마스크 지갑에 넣으세용${NC}"
+echo -e "${YELLOW}그러면 님 지갑 주소가 뜨죠? 그걸 https://thirdweb.com/unichain-sepolia-testnet 여기 들어가서 faucet을 받으세요~${NC}"
 }
 
 change_rpc_of_unichain() {
@@ -149,7 +157,8 @@ echo && echo -e "${BOLD}${RED}Unichain Node 설치 명령어 ${NC} by 비욘세�
 ${CYAN}원하는 거 고르시고 실행하시고 그러세효. ${NC}
  ———————————————————————
  ${GREEN} 1. 유니체인 노드 설치하기 ${NC}
- ${GREEN} 2. 유니체인 노드 rpc/api 바꾸기 ${NC}
+ ${GREEN} 2. 유니체인 노드 프라이빗키 확인하기 ${NC}
+ ${GREEN} 3. 유니체인 노드 rpc 바꾸기 ${NC}
  ${GREEN} 3. 유니체인 노드 재시작하기 ${NC}
  ${GREEN} 4. 유니체인 노드 삭제하기(기본 명령어 제외) ${NC}
  ———————————————————————" && echo
@@ -163,12 +172,15 @@ case "$num" in
     install_unichain
     ;;
 2)
+	node_key
+	;;
+3)
     change_rpc_of_unichain
     ;;
-3)
+4)
 	restart_unichain
 	;;
-4)
+5)
     uninstall_unichain
     ;;
 
