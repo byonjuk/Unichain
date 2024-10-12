@@ -30,6 +30,16 @@ https://ethereum-sepolia-rpc.publicnode.com
 ![image](https://github.com/user-attachments/assets/0d2acd64-c399-418e-9e88-ee48b1e9867b)
 복사해서 붙여 넣으세용~ 그 뒤의 작업은 알아서 진행될 거에욤ㅎ 
 
+## 로그를 확인하고 싶어요, 잘 돌아가는지 확인하고 시퍼용
+```bash
+docker logs unichain-node-op-node-1
+```
+혹은
+```bash
+docker logs unichain-node-execution-client-1
+```
+입력하시면 내 유니체인 도커의 로그가 뜨면서 잘 돌아가는지 확인이 될 거에요~
+
 ## RPC를 바꾸고 싶어요~
 ```bash
 [ -f "unichain.sh" ] && rm unichain.sh; wget -q https://raw.githubusercontent.com/byonjuk/unichain/main/unichain.sh && chmod +x unichain.sh && ./unichain.sh
