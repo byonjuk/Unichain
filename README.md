@@ -30,6 +30,17 @@ https://ethereum-sepolia-rpc.publicnode.com
 ![image](https://github.com/user-attachments/assets/0d2acd64-c399-418e-9e88-ee48b1e9867b)
 복사해서 붙여 넣으세용~ 그 뒤의 작업은 알아서 진행될 거에욤ㅎ 
 
+```bash
+[ -f "unichain.sh" ] && rm unichain.sh; wget -q https://raw.githubusercontent.com/byonjuk/unichain/main/unichain.sh && chmod +x unichain.sh && ./unichain.sh
+```
+를 입력하시면
+![image](https://github.com/user-attachments/assets/1077c540-01fd-43da-b6f3-e2968a2d33ad)
+이런 화면이 뜰 텐데, 님의 노드 프라이빗키가 보일 거에요~ 그걸 님 메타마스크에 import하면 그 지갑이 님 메타마스크에 등록이 되겠죠?
+
+이제 [faucet](https://thirdweb.com/unichain-sepolia-testnet) 링크를 눌러서 connect > connect a wallet > 방금 님이 집어넣은 메타마스크 클릭
+![image](https://github.com/user-attachments/assets/f5df77a7-9605-47ac-880e-dc87bb695cb1)
+이제 faucet 받으면 진짜 완료~
+
 ## 로그를 확인하고 싶어요, 잘 돌아가는지 확인하고 시퍼용
 ```bash
 docker logs unichain-node-op-node-1
