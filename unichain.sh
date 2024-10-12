@@ -86,9 +86,37 @@ cd ~/unichain-node && docker-compose up -d
 echo -e "${CYAN}잘 설정됐는지 확인하기${NC}"
 curl -d '{"id":1,"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest",false]}' -H "Content-Type: application/json" http://localhost:8545
 
-echo -e "${CYAN}임시 저장${NC}"
+echo -e "${RED}다 됐으니까 꺼~!져 씨;발${NC}"
 }
 
+change_rpc_of_unichain() {
+echo -e "${CYAN}docker compose down${NC}"
+cd ~/unichain-node && docker compose down
+
+# Unichain 구성 파일 경로
+sepolia_env=~/unichain-node/.env.sepolia
+
+echo -ne "${BOLD}${MAGENTA}새로운 이더리움 세폴리아 rpc를 입력하세요: ${NC}"
+read -e sepolia_rpc
+
+echo -e "${CYAN}.env.sepolia 파일 수정 중${NC}"
+sed -i "s|^OP_NODE_L1_ETH_RPC=.*|OP_NODE_L1_ETH_RPC=$sepolia_rpc|" "$sepolia_env" 
+sed -i "s|^OP_NODE_L1_BEACON=.*|OP_NODE_L1_BEACON=https://ethereum-sepolia-beacon-api.publicnode.com|" "$sepolia_env"
+
+echo -e "${GREEN}수정이 완료되었습니다!${NC}"
+
+echo -e "${CYAN}docker-compose up -d${NC}"
+cd ~/unichain-node && docker-compose up -d
+
+echo -e "${CYAN}잘 설정됐는지 확인하기${NC}"
+curl -d '{"id":1,"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest",false]}' -H "Content-Type: application/json" http://localhost:8545
+
+echo -e "${RED}다 됐으니까 꺼~!져 씨;발${NC}"
+}
+
+uninstall_unichain() {
+echo -e "${BOLD}${RED}내가 왜 해줘야 되는데? 씨발 꺼져${NC}"
+}
 # 메인 메뉴
 echo && echo -e "${BOLD}${RED}Unichain Node 설치 명령어 ${NC} by 비욘세제발죽어
 ${CYAN}원하는 거 고르시고 실행하시고 그러세효. ${NC}
