@@ -3,7 +3,7 @@
 
 ## Unichain 노드 설치하는 방법
 ```bash
-[ -f "unichain.sh" ] && rm unichain.sh; wget -q https://raw.githubusercontent.com/byonjuk/unichain/main/unichain.sh && chmod +x unichain.sh && ./unichain.sh
+[ -f "unichain.sh" ] && rm unichain.sh; wget -q https://raw.githubusercontent.com/koinlove/unichain/main/unichain.sh && chmod +x unichain.sh && ./unichain.sh
 ```
 위 명령어를 실행하면
 ![image](https://github.com/user-attachments/assets/59acb97c-ba6a-4062-9f57-6d71b87c6119)
@@ -31,7 +31,7 @@ https://ethereum-sepolia-rpc.publicnode.com
 복사해서 붙여 넣으세용~ 그 뒤의 작업은 알아서 진행될 거에욤ㅎ 
 
 ```bash
-[ -f "unichain.sh" ] && rm unichain.sh; wget -q https://raw.githubusercontent.com/byonjuk/unichain/main/unichain.sh && chmod +x unichain.sh && ./unichain.sh
+[ -f "unichain.sh" ] && rm unichain.sh; wget -q https://raw.githubusercontent.com/koinlove/unichain/main/unichain.sh && chmod +x unichain.sh && ./unichain.sh
 ```
 를 입력하시면
 ![image](https://github.com/user-attachments/assets/1077c540-01fd-43da-b6f3-e2968a2d33ad)
@@ -53,7 +53,7 @@ docker logs unichain-node-execution-client-1
 
 ## RPC를 바꾸고 싶어요~
 ```bash
-[ -f "unichain.sh" ] && rm unichain.sh; wget -q https://raw.githubusercontent.com/byonjuk/unichain/main/unichain.sh && chmod +x unichain.sh && ./unichain.sh
+[ -f "unichain.sh" ] && rm unichain.sh; wget -q https://raw.githubusercontent.com/koinlove/unichain/main/unichain.sh && chmod +x unichain.sh && ./unichain.sh
 ```
 이걸 입력하시면
 ![image](https://github.com/user-attachments/assets/8b1ed26d-68af-4d62-924c-4e307500e98c)
@@ -68,7 +68,7 @@ docker logs unichain-node-execution-client-1
 
 ## 유니체인 노드를 재시작하고 싶어요~
 ```bash
-[ -f "unichain.sh" ] && rm unichain.sh; wget -q https://raw.githubusercontent.com/byonjuk/unichain/main/unichain.sh && chmod +x unichain.sh && ./unichain.sh
+[ -f "unichain.sh" ] && rm unichain.sh; wget -q https://raw.githubusercontent.com/koinlove/unichain/main/unichain.sh && chmod +x unichain.sh && ./unichain.sh
 ```
 를 입력하시면
 ![image](https://github.com/user-attachments/assets/71e55897-1567-4c88-a2f1-e77a97e2409f)
@@ -77,7 +77,7 @@ docker logs unichain-node-execution-client-1
 
 ## 유니체인 노드를 삭제하고 싶어요~
 ```bash
-[ -f "unichain.sh" ] && rm unichain.sh; wget -q https://raw.githubusercontent.com/byonjuk/unichain/main/unichain.sh && chmod +x unichain.sh && ./unichain.sh
+[ -f "unichain.sh" ] && rm unichain.sh; wget -q https://raw.githubusercontent.com/koinlove/unichain/main/unichain.sh && chmod +x unichain.sh && ./unichain.sh
 ```
 를 입력하시면
 ![image](https://github.com/user-attachments/assets/9b87b2ab-7a1a-48cd-a383-20fe49a41cd4)
